@@ -2,29 +2,25 @@ import "./Switch.css";
 
 interface SwitchProps {
   primary?: boolean;
-  backgroundColor?: string;
+  size?: "small" | "medium" | "large";
   onClick?: () => void;
 }
 
-export const Switch = ({
-  primary = false,
-  backgroundColor,
-  ...props
-}: SwitchProps) => {
+export const Switch = ({ primary = false, size = "medium" }: SwitchProps) => {
+  const mode = primary ? "slider" : "slider--secondary";
+
+  const check = primary ? "check" : "check--secondary";
+
   return (
-    <label className="switch">
+    <label className={["switch", `storybook-switch--${size}`].join(" ")}>
       <input type="checkbox"></input>
       <span
-        className={[
-          "slider round",
-          // `storybook-button--${size}`,
-          // mode,
-        ].join(" ")}
-        style={{ backgroundColor }}
-        {...props}
+        className={["slider round", `storybook-slider--${size}`, mode].join(
+          " "
+        )}
       >
         <svg
-          className="check"
+          className={["check", `storybook-check--${size}`, check].join(" ")}
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"

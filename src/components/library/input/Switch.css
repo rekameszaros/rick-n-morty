@@ -5,13 +5,22 @@
   height: 32px;
 }
 
+.storybook-switch--large {
+  width: 65px;
+  height: 40px;
+}
+
+.storybook-switch--small {
+  width: 39px;
+  height: 24px;
+}
+
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-/* The slider */
 .slider {
   position: absolute;
   cursor: pointer;
@@ -37,6 +46,29 @@
   transition: .4s;
 }
 
+.slider--secondary {
+  background-color: #ffffff;
+  outline: solid 2px #000000;
+}
+
+.slider--secondary:before {
+  background-color: #000000;
+}
+
+.storybook-slider--large::before {
+  height: 20px;
+  width: 20px;
+  left: 8px;
+  bottom: 10px;
+}
+
+.storybook-slider--small::before {
+  height: 12px;
+  width: 12px;
+  left: 6px;
+  bottom: 6px;
+}
+
 .check {
   visibility: hidden;
 }
@@ -55,6 +87,30 @@ input:checked+.slider:before {
   left: 4px;
 }
 
+input:checked+.slider--secondary {
+  background-color: #ffffff;
+  outline: solid 2px #000000;
+}
+
+input:checked+.slider--secondary:before {
+  transform: translateX(20px);
+  background-color: rgb(0, 0, 0);
+}
+
+input:checked+.storybook-slider--large:before {
+  transform: translateX(26px);
+  height: 28px;
+  width: 28px;
+  bottom: 6px;
+}
+
+input:checked+.storybook-slider--small:before {
+  transform: translateX(12px);
+  height: 20px;
+  width: 20px;
+  bottom: 2px;
+}
+
 input:checked~* .check {
   visibility: visible;
   position: absolute;
@@ -64,6 +120,24 @@ input:checked~* .check {
   bottom: 8px;
   color: #018799;
   transition-delay: .2s;
+}
+
+input:checked~* .check--secondary {
+  color: #ffffff;
+}
+
+input:checked~* .storybook-check--large {
+  height: 20px;
+  width: 20px;
+  right: 10px;
+  bottom: 10px;
+}
+
+input:checked~* .storybook-check--small {
+  height: 12px;
+  width: 12px;
+  right: 7px;
+  bottom: 6px;
 }
 
 /* Rounded sliders */
