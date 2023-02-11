@@ -1,12 +1,19 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
+import TimePicker from './components/library/input/TimePicker'
+
 
 function App() {
   const [count, setCount] = useState(0)
 
+
   return (
     <div className="App">
+      <TimePicker 
+      setHours={0}
+      setMinutes={0}
+      /> 
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src="/vite.svg" className="logo" alt="Vite logo" />
