@@ -6,3 +6,7 @@ Always remember to `npm install` when first downloading this.
 Start the React server with: `npm run dev`
 
 Start the Storybook server with `rpm run storybook`
+
+npm install @apollo/client graphql
+npm install react-router
+npm install react-router-dom
