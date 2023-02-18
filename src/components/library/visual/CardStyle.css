@@ -1,4 +1,4 @@
-.cardComponent {
+/*.cardComponent {
     width: 300px;
     height: 300px;
     background-color: #ffffff;
@@ -35,5 +35,11 @@
     color: #99969C;
     margin-left: 25px;
     margin-top: -20px;
+  }
+  */
+  .Card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
   }
   
