@@ -37,9 +37,25 @@
     margin-top: -20px;
   }
   */
+
+  /*back
   .Card {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+  }
+  */
+
+  .Card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .cardComponent {
+    width: 300px;
+    margin: 20px;
   }
   

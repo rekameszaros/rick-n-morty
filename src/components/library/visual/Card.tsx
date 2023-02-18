@@ -1,6 +1,6 @@
 import React from 'react';
 import './CardStyle.css';
-import { useCharacters } from "./useCharacters";
+//import { useCharacters } from "./useCharacters";
 
 /*
 interface CardProps {
@@ -27,6 +27,7 @@ export default function Card({
 };
 */
 
+/*back
 export default function Card() {
 
 //now the hook is reusable
@@ -45,6 +46,30 @@ const {error, loading, data} = useCharacters();
           </div>
         );
       })}
+    </div>
+  );
+}
+
+*/
+
+interface CardProps {
+  image?: string;
+  title: string;
+  subtitle: string;
+  onClick?: () => void;
+}
+
+export default function Card({
+  image = "./src/assets/ricknmorty.png",
+  title,
+  subtitle,
+  onClick,
+}: CardProps) {
+  return (
+    <div className="cardComponent" onClick={onClick}>
+      <img src={image} alt={title}/>
+      <h2>{title}</h2>
+      <p>{subtitle}</p>
     </div>
   );
 }
