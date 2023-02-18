@@ -2,7 +2,7 @@ import React from 'react';
 import './CardStyle.css';
 //import { useCharacters } from "./useCharacters";
 
-/*
+/*original
 interface CardProps {
   image?: string;
   title: string;
@@ -27,7 +27,7 @@ export default function Card({
 };
 */
 
-/*back
+/*my code
 export default function Card() {
 
 //now the hook is reusable

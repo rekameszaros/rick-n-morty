@@ -1,4 +1,4 @@
-/* back
+/* My code. (new file)
 import { useQuery, gql } from "@apollo/client";
 
 //Creating query hook
