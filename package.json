@@ -11,8 +11,10 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@apollo/client": "^3.7.9",
     "framer-motion": "^8.5.5",
     "lucide-react": "^0.108.0",
+    "praphql": "^0.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
