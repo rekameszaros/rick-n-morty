@@ -12,28 +12,28 @@
   padding: 0px;
   cursor: pointer;
   text-align: left;
-  }
-  
-  .cardComponent img {
+}
+
+.cardComponent img {
   width: 100%;
   height: 200px;
   object-fit: cover;
   border-radius: 5px 5px 0px 0px;
-  }
-  
-  .cardComponent h2 {
+}
+
+.cardComponent h2 {
   font-size: 17px;
   font-weight: 700;
   color: #49454f;
   margin-left: 25px;
   margin-top: 30px;
-  }
-  
-  .cardComponent p {
+}
+
+.cardComponent p {
   font-size: 12px;
   font-weight: 500;
-  color: #99969C;
+  color: #99969c;
   margin-left: 25px;
   margin-top: -20px;
   text-align: left;
-  }
+}
