@@ -3,6 +3,7 @@ import { useQuery } from '@apollo/client';
 import { useParams } from 'react-router-dom';
 import './CharacterDetail.css';
 import { GET_SINGLE_CHARACTER } from "../queries/queries";
+import Chip from "../visual/Chip";
 
 interface ICharacter {
   id: string;
@@ -47,7 +48,9 @@ function CharacterDetails() {
     <div className="character-details-container">
       <div className="character-image-container">
         <img src={data.character.image} alt={data.character.name} className="character-image" />
-        <div className={`status-pill ${status}`}>{data.character.status}</div>
+          <div className={`chip-container ${status}`}>
+            <Chip text={data.character.status} variant="outlined" color={status === "alive" ? "#00b0c8" : "#FF0000"} status={status} />
+          </div>
       </div>
       <div className="character-info">
         <h2>{data.character.name}</h2>
