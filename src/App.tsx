@@ -4,9 +4,11 @@ import CharactersList from "./pages/CharactersList";
 import ReactDOM from "react-dom/client";
 //import React, { Fragment } from "react";
 import { Router, Route } from "react-router-dom";
+import Header from "./Shared/Header";
 
 function App() {
   return <div className="App">
+    <Header />
     <CharactersList/>
   </div>;
 }
