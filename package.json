@@ -13,10 +13,12 @@
   "dependencies": {
     "@apollo/client": "^3.7.9",
     "framer-motion": "^8.5.5",
+    "graphql": "^16.6.0",
     "lucide-react": "^0.108.0",
     "praphql": "^0.1.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
@@ -29,6 +31,7 @@
     "@storybook/testing-library": "^0.0.13",
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.9",
+    "@types/react-router-dom": "^5.3.3",
     "@vitejs/plugin-react": "^3.0.0",
     "babel-loader": "^8.3.0",
     "typescript": "^4.9.3",
