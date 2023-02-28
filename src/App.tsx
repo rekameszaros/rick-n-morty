@@ -1,35 +1,40 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import "./App.css";
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import { BrowserRouter as Router, Routes, Route, RouteProps } from 'react-router-dom';
+import Header from "./components/library/pages/Header";
+import Footer from "./components/library/pages/Footer";
+import Card, { CardProps } from "./components/library/visual/Card";
+import CharacterDetails from "./components/library/pages/CharacterDetail";
+import CharacterPage from "./components/library/pages/CharacterPage";
+import './App.css';
+import './components/library/visual/CardStyle.css'
+import './components/library/pages/Footer.css';
+import './components/library/pages/Header.css';
 
-console.log("Hakim was here");
+
+const client = new ApolloClient({
+  uri: 'https://rickandmortyapi.com/graphql',
+  cache: new InMemoryCache()
+});
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <ApolloProvider client={client}>
+      <div className="container">
+        <Router>
+          <Header />
+          <div className="imgcontainer">
+            <img src="src/assets/hero.png" className="heroimg" alt="hero"></img>
+          </div>
+          <Routes>
+            <Route path="/" element={<CharacterPage />} />
+            <Route path="/characters/:id/" element={<CharacterDetails />} />
+            <Route path="/characters" element={<CharacterPage />} />
+          </Routes>
+          <Footer />
+        </Router>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+    </ApolloProvider>
   );
 }
 

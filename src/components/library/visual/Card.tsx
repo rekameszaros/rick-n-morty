@@ -1,7 +1,7 @@
 import React from 'react';
 import './CardStyle.css';
 
-interface CardProps {
+export interface CardProps {
   image?: string;
   title: string;
   subtitle: string;

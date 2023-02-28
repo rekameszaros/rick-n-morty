@@ -1,0 +1,33 @@
+.grid {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap:60px;
+    justify-items: center;
+    margin-top: 60px;
+  }
+
+.load-more.button {
+    margin-top: 20px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 2px solid #00b0c8;
+    font-size: 16px;
+    font-weight: 600;
+    color: #00b0c8;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .load-more.button:hover {
+    background-color: #00b0c8;
+    color: #ffffff;
+  }
+  
+  .load-more-container {
+    display: flex;
+    justify-content: center; /* center the load more button horizontally */
+    margin-top: 50px;
+  
+  }
