@@ -41,3 +41,30 @@ function App() {
 
 export default App;
 */
+
+/*
+const client = new ApolloClient({
+  uri: 'https://rickandmortyapi.com/graphql',
+  cache: new InMemoryCache()
+});
+
+function App() {
+  return (
+    <ApolloProvider client={client}>
+      <div className="container">
+        <Router>
+          <Header />
+          <div className="imgcontainer">
+            <img src="src/assets/hero.png" className="heroimg" alt="hero"></img>
+          </div>
+          <Routes>
+            <Route path="/" element={<div className="grid"><Card title="" subtitle="" /></div>} />
+            <Route path="/characters/:id/" element={<CharacterDetails />} />
+          </Routes>
+          <Footer />
+        </Router>
+      </div>
+    </ApolloProvider>
+  );
+}
+*/
