@@ -1,0 +1,47 @@
+.header {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    flex-direction: row;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 45px;
+    height: 45px;
+    margin-right: 10px;
+  }
+  
+  .title {
+    margin: 0;
+  }
+  
+  .nav {
+    display: flex;
+    align-items: center;
+  }
+  
+  
+  .nav-list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-item {
+    margin-right: 80px;
+  }
+  
+  .nav-item a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+  }
+  
