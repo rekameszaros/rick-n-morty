@@ -1,10 +1,20 @@
 import React from 'react';
+import { useNavigate } from "react-router-dom";
 import './Header.css';
 
+
+
 function Header() {
+
+  const navigate = useNavigate();
+
+  const handleLogo = () => {
+    navigate('/');
+  };
+
   return (
     <header className="header">
-      <div className="logo-container">
+      <div className="logo-container" onClick={handleLogo}>
         <img src='src/assets/logo.png' alt="Logo" className="logo" />
       </div>
       <nav className="nav">
