@@ -55,3 +55,17 @@ query GetLocations($page: Int!) {
   }
 }
 `;
+export const GET_SINGLE_LOCATION = gql`
+  query GetSingleLocation($id: ID!) {
+    location(id: $id) {
+      id
+      name
+      dimension
+      type
+      created
+      residents{
+        name
+      }
+    }
+    }
+`;

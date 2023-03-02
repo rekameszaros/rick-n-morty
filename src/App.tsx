@@ -5,6 +5,7 @@ import Footer from "./components/library/pages/Footer";
 import CharacterDetails from "./components/library/pages/CharacterDetail";
 import CharacterPage from "./components/library/pages/CharacterPage";
 import Location from "./components/library/pages/Location";
+import SingleLocation from './components/library/pages/SingleLocation';
 import './App.css';
 import './components/library/visual/CardStyle.css'
 import './components/library/pages/Footer.css';
@@ -26,6 +27,7 @@ function App() {
             <Route path="/characters/:id" element={<CharacterDetails />} />
             <Route path="/characters" element={<CharacterPage />} />
             <Route path="/locations" element={<Location />} />
+            <Route path="/locations/:id" element={<SingleLocation />} />
           </Routes>
           <Footer />
         </Router>
