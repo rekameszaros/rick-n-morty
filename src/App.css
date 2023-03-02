@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
 }  
@@ -6,17 +7,12 @@ body {
   flex-grow: 1;
 }
 
-.footer {
-  margin-top: 80px;
-}
 
 .imgcontainer{
   display: flex;
   justify-content: center;
   margin-top: 60px;
-}
-.heroimg{
-  width: 600px;
+  margin-bottom: 40px;
 }
 
 a:-webkit-any-link  {

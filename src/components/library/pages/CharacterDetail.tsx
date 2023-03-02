@@ -1,9 +1,11 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom'; // import useHistory
 import './CharacterDetail.css';
 import { GET_SINGLE_CHARACTER } from "../queries/queries";
-import Chip from "../visual/Chip";
+import BackButton from './BackButton';
+import  List  from "../visual/List";
+
 
 interface ICharacter {
   id: string;
@@ -34,9 +36,14 @@ function CharacterDetails() {
   const { loading, error, data } = useQuery<ICharacterData, ICharacterVariables>(
     GET_SINGLE_CHARACTER,
     {
-      variables: { id: id ?? "" }, // Use empty string as default value
+      variables: { id: id ?? "" }, 
     }
   );
+  const navigate = useNavigate(); 
+
+  const handleBackButtonClick = () => {
+    navigate('/');
+  }
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
@@ -44,38 +51,26 @@ function CharacterDetails() {
 
   const status = data.character.status === "Alive" ? "alive" : "dead";
 
+  const listProps = {
+    specie: data.character.species,
+    type: data.character.type,
+    gender: data.character.gender,
+    origin: data.character.origin.name,
+    location: data.character.location.name,
+  };
+
   return (
     <div className="character-details-container">
+      <BackButton onClick={handleBackButtonClick} />
       <div className="character-image-container">
-        <img src={data.character.image} alt={data.character.name} className="character-image" />
-          <div className={`chip-container ${status}`}>
-            <Chip text={data.character.status} variant="outlined" color={status === "alive" ? "#00b0c8" : "#FF0000"} status={status} />
-          </div>
+        <div className="overlay">
+          <img src={data.character.image} alt={data.character.name} className={`character-image ${status === 'dead' ? 'black-and-white' : ''}`} />
+        </div>
+        <div className={`status-pill ${status}`}>{data.character.status}</div>
       </div>
       <div className="character-info">
         <h2>{data.character.name}</h2>
-        <div className="character-details-form">
-          <div className="form-row">
-            <span className="form-label">Species:</span>
-            <span className="form-value">{data.character.species}</span>
-          </div>
-          <div className="form-row">
-            <span className="form-label">Type:</span>
-            <span className="form-value">{data.character.type || '-'}</span>
-          </div>
-          <div className="form-row">
-            <span className="form-label">Gender:</span>
-            <span className="form-value">{data.character.gender}</span>
-          </div>
-          <div className="form-row">
-            <span className="form-label">Origin:</span>
-            <span className="form-value">{data.character.origin.name}</span>
-          </div>
-          <div className="form-row">
-            <span className="form-label">Location:</span>
-            <span className="form-value">{data.character.location.name}</span>
-          </div>
-        </div>
+        <List {...listProps} />
       </div>
     </div>
   );

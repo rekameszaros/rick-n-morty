@@ -1,16 +1,14 @@
-import { useState } from "react";
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import { BrowserRouter as Router, Routes, Route, RouteProps } from 'react-router-dom';
 import Header from "./components/library/pages/Header";
 import Footer from "./components/library/pages/Footer";
-import Card, { CardProps } from "./components/library/visual/Card";
 import CharacterDetails from "./components/library/pages/CharacterDetail";
 import CharacterPage from "./components/library/pages/CharacterPage";
+import Location from "./components/library/pages/Location";
 import './App.css';
 import './components/library/visual/CardStyle.css'
 import './components/library/pages/Footer.css';
 import './components/library/pages/Header.css';
-
 
 const client = new ApolloClient({
   uri: 'https://rickandmortyapi.com/graphql',
@@ -23,13 +21,11 @@ function App() {
       <div className="container">
         <Router>
           <Header />
-          <div className="imgcontainer">
-            <img src="src/assets/hero.png" className="heroimg" alt="hero"></img>
-          </div>
           <Routes>
             <Route path="/" element={<CharacterPage />} />
-            <Route path="/characters/:id/" element={<CharacterDetails />} />
+            <Route path="/characters/:id" element={<CharacterDetails />} />
             <Route path="/characters" element={<CharacterPage />} />
+            <Route path="/locations" element={<Location />} />
           </Routes>
           <Footer />
         </Router>

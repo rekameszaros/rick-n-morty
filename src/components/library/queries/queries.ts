@@ -35,3 +35,23 @@ export const GET_CHARACTERS = gql`
     }
   }
 `;
+
+export const GET_ALL_LOCATIONS = gql`
+query GetLocations($page: Int!) {
+  locations(page: $page) {
+    info {
+      count
+      pages
+      next
+      prev
+    }
+    results {
+      id
+      name
+      dimension
+      type
+      created
+    }
+  }
+}
+`;

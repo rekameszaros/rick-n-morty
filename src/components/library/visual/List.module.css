@@ -5,16 +5,20 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
-    letter-spacing: 0.25px; 
+    letter-spacing: 2px; 
+    width: 300px;
+    align-items: center;
+    margin-bottom: 80px;
 }
 
 ul{
   list-style-type: none;
-  margin-bottom: 3em;
+ 
 }
 
 li{
-    border-bottom: 1px solid rgba(135, 253, 110, 0.5);
+    border-bottom: 1px solid rgba(0, 176, 200, 1);
+    margin-bottom: 20px;
 }
 
 label{

@@ -5,13 +5,15 @@ export interface CardProps {
   image?: string;
   title: string;
   subtitle: string;
+  created:string;
   onClick?: () => void;
 }
 
 export default function Card({
-    image = "./src/assets/ricknmorty.png",
+    image,
     title,
     subtitle,
+    created,
   }: CardProps) {
 
 
@@ -20,6 +22,7 @@ export default function Card({
       <img src={image}/>
       <h2>{title}</h2>
      <p>{subtitle}</p>
+     <p>{created}</p>
     </div>
   );
 };

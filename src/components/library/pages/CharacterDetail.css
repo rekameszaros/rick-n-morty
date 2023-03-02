@@ -1,3 +1,4 @@
+
 .character-details-container {
   display: flex;
   flex-direction: column;
@@ -5,15 +6,36 @@
   margin-top: 2rem;
 }
 
+
 .character-image-container {
   position: relative;
 }
 
-.chip-container {
-  position: absolute;
-  top: 0.5rem;
+.character-details-container .status-pill {
+  position: absolute; 
+  top: 0.5rem; 
   left: 10.5rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: normal;
+  color: rgba(0, 176, 200, 1);
+  text-transform: uppercase;
 }
+
+.character-details-container .alive {
+  background-color: rgba(135, 253, 110, 0.8);
+}
+
+.character-details-container .dead {
+  background-color: rgba(253, 110, 110, 0.8);
+  color: black;
+}
+.character-image.black-and-white {
+  filter: grayscale(100%);
+}
+
+
 
 .character-details-container img {
   border-radius: 50%;
@@ -21,29 +43,11 @@
   height: 15rem;
 }
 
+
+
 .character-details-container h2 {
   margin-top: 1rem;
   text-align: center;
+  margin-bottom: 3rem;
 }
 
-.character-details-container .character-details-form {
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.character-details-container .character-details-form .form-row {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 1rem;
-}
-
-.character-details-container .character-details-form .form-row .form-label {
-  font-weight: bold;
-  margin-right: 1rem;
-}
-
-.character-details-container .character-details-form .form-row .form-value {
-  font-weight: normal;
-}

@@ -53,6 +53,9 @@ export default function CharacterPage() {
 
   return (
     <>
+    <div className="imgcontainer">
+      <img src="src/assets/hero.png" className="heroimg" alt="hero"></img>
+    </div>
       <div className="grid">
         {data?.characters.results.map((character) => (
           <Link key={character.id} to={`/characters/${character.id}`}>
